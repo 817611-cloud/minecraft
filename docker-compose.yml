@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: minecraft
+    environment:
+      EULA: "TRUE"
+      TYPE: "vanilla"
+      VERSION: "latest"
+      MEMORY: "2G"
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
